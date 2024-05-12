@@ -3,60 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Bio</title>
+    <title>Sebass Bio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            cursor: pointer;
         }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
-            color: #333;
-        }
-        p {
-            color: #666;
+        .content {
+            text-align: center;
         }
     </style>
 </head>
-<body>
-
-<div class="container">
-    <header>
-        <h1>Your Name</h1>
-        <p>Web Developer</p>
-    </header>
-    
-    <section>
-        <h2>About Me</h2>
-        <p>Add a brief description about yourself here.</p>
-    </section>
-    
-    <section>
-        <h2>Experience</h2>
-        <p>Add your work experience here.</p>
-    </section>
-    
-    <section>
-        <h2>Education</h2>
-        <p>Add your educational background here.</p>
-    </section>
-    
-    <section>
-        <h2>Contact</h2>
-        <p>Email: youremail@example.com<br>
-        Phone: +1234567890<br>
-        Website: <a href="https://www.yourwebsite.com">www.yourwebsite.com</a></p>
-    </section>
-</div>
-
+<body onclick="showContent()">
+    <div class="content" id="content" style="display: none;">
+        <h1>Sebass</h1>
+        <p>C# Coder - Professional Idiot</p>
+    </div>
+    <script>
+        function showContent() {
+            document.getElementById('content').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
