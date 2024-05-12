@@ -84,8 +84,18 @@
     });
 
     function animateTitle() {
-    const titleText = "Sebassa's BioLink"; // New title text
-    document.title = titleText; // Set the title of the document
+    const titleText = "Sebass"; // Text for animation
+    let reverse = false;
+    let index = 0;
+    setInterval(() => {
+        if (index === titleText.length) {
+        reverse = true;
+        } else if (index === 0) {
+        reverse = false;
+        }
+        const slicedText = reverse ? titleText.slice(0, index--) : titleText.slice(0, ++index);
+        document.title = "@" + slicedText;
+    }, 200); // Adjust the interval for animation speed
     }
 
   </script>
