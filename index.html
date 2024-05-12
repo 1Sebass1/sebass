@@ -61,6 +61,7 @@
   </style>
 </head>
 <body>
+  <audio id="bgMusic" src="funnn.mp3" autoplay loop></audio>
   <div id="bioLink" class="hidden">
     <div>
       <img src="https://cdn.discordapp.com/avatars/1171276244495650911/ec019b99a364b6d74e7c129feb3f483d.webp?size=1024&format=webp&width=0&height=256" alt="pfp" class="profilePic">
@@ -76,24 +77,24 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-    document.body.addEventListener("click", function() {
+      document.body.addEventListener("click", function() {
         document.getElementById("bioLink").classList.remove("hidden");
         document.getElementById("enterText").style.display = "none";
         animateTitle();
-    });
+      });
     });
 
     function animateTitle() {
-        const targetTitle = "Sebass";
+      const targetTitle = "Sebass";
         
-        let currentIndex = 0;
-        let interval = setInterval(() => {
-            document.title = targetTitle.substring(0, currentIndex + 1);
-            currentIndex++;
-            if (currentIndex >= targetTitle.length) {
-                clearInterval(interval);
-            }
-        }, 500);
+      let currentIndex = 0;
+      let interval = setInterval(() => {
+        document.title = targetTitle.substring(0, currentIndex + 1);
+        currentIndex++;
+        if (currentIndex >= targetTitle.length) {
+          clearInterval(interval);
+        }
+      }, 500);
     }
   </script>
 </body>
