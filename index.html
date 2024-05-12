@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sebass</title>
+  <title id="title">S</title>
   <style>
     body {
       margin: 0;
@@ -17,12 +17,21 @@
       height: 100vh;
     }
     #bioLink {
+      position: relative;
       padding: 20px;
       border-radius: 10px;
       background-color: rgba(255, 255, 255, 0.1);
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
       animation: fadeIn 1s ease-out forwards;
       text-align: center;
+    }
+    #enterText {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+      cursor: pointer;
     }
     #bioLink.hidden {
       display: none;
@@ -44,14 +53,25 @@
     <img src="https://cdn.discordapp.com/avatars/1171276244495650911/ec019b99a364b6d74e7c129feb3f483d.webp?size=1024&format=webp&width=0&height=256" alt="Sebass's Profile Picture" class="profile-img">
     <h1>Sebass</h1>
     <p>C# & Python</p>
-    <p>Professional retard</p>
+    <p>Professional Retard</p>
     <!-- Add your social media links or project links here -->
   </div>
+  <div id="enterText">Click to enter</div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
+      const title = document.getElementById("title");
+      const titleText = "Sebass";
+      let index = 0;
+
+      setInterval(function() {
+        title.textContent = titleText.substring(0, index % (titleText.length) + 1);
+        index++;
+      }, 500);
+      
       document.body.addEventListener("click", function() {
         document.getElementById("bioLink").classList.remove("hidden");
+        document.getElementById("enterText").style.display = "none";
       });
     });
   </script>
