@@ -1,57 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sebass Bio</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        #enterText {
-            cursor: pointer;
-            font-size: 24px;
-            opacity: 1;
-            transition: opacity 1s ease-in-out;
-        }
-        #sebassBox {
-            display: none;
-            width: 300px;
-            height: 150px;
-            background-color: #333;
-            color: white;
-            border-radius: 10px;
-            text-align: center;
-            padding: 20px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sebass</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #bioLink {
+      padding: 20px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      animation: fadeIn 1s ease-out forwards;
+      text-align: center;
+    }
+    #bioLink.hidden {
+      display: none;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
-    <div id="enterText" onclick="showContent()">Click to Enter</div>
-    <div id="sebassBox">
-        <h1>Sebass</h1>
-        <p>C# Coder - Professional Idiot</p>
-    </div>
-    <script>
-        function showContent() {
-            document.getElementById('enterText').style.opacity = '0';
-            setTimeout(function() {
-                document.getElementById('enterText').style.display = 'none';
-                document.getElementById('sebassBox').style.display = 'block';
-            }, 1000);
-        }
-    </script>
+  <div id="bioLink" class="hidden">
+    <img src="https://cdn.discordapp.com/avatars/1171276244495650911/ec019b99a364b6d74e7c129feb3f483d.webp?size=1024&format=webp&width=0&height=256" alt="Sebass's Profile Picture" class="profile-img">
+    <h1>Sebass</h1>
+    <p>C# & Python</p>
+    <p>Professional retard</p>
+    <!-- Add your social media links or project links here -->
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.body.addEventListener("click", function() {
+        document.getElementById("bioLink").classList.remove("hidden");
+      });
+    });
+  </script>
 </body>
 </html>
