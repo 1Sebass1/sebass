@@ -4,11 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sebass's BioLink</title>
-  <meta property="og:title" content="Sebass">
-  <meta property="og:description" content="I'm passionate about coding and I work with Python and C#. Despite occasional typos, I strive to learn and improve.">
-  <meta property="og:image" content="https://cdn.discordapp.com/avatars/1171276244495650911/ec019b99a364b6d74e7c129feb3f483d.webp?size=1024">
-  <meta property="og:url" content="https://example.com/sebass">
-  <meta property="og:type" content="website">
   <style>
     body {
       margin: 0;
@@ -29,11 +24,11 @@
       background-color: rgba(255, 255, 255, 0.1);
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
       animation: fadeIn 1s ease-out forwards;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      text-align: center; /* Center text horizontally */
+      display: flex; /* Use flexbox */
+      flex-direction: column; /* Stack children vertically */
+      justify-content: center; /* Center children vertically */
+      align-items: center; /* Center children horizontally */
     }
     #enterText {
       position: absolute;
@@ -54,14 +49,14 @@
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      margin-bottom: 10px;
+      margin-bottom: 10px; /* Adjust margin bottom */
     }
     .social-link {
       margin-top: auto; /* Pushes the social link to the bottom */
     }
     .social-link img {
       width: 30px; /* Adjust the size of the icon */
-      height: 30px; /* Adjust the size of the icon */
+      height: auto; /* Adjust the size of the icon */
       margin-bottom: 5px; /* Adjust the spacing between the icon and the text */
     }
   </style>
@@ -69,15 +64,14 @@
 <body>
   <div id="bioLink" class="hidden">
     <div>
-      <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a69f118df70ad7828d4_icon_clyde_blurple_RGB.svg" alt="Sebass's Profile Picture" class="profile-img">
+      <img src="https://cdn.discordapp.com/avatars/1171276244495650911/ec019b99a364b6d74e7c129feb3f483d.webp?size=1024&format=webp&width=0&height=256" alt="Sebass's Profile Picture" class="profile-img">
       <h1>Sebass</h1>
       <p>C# & Python</p>
       <p>Professional Retard</p>
       <a class="social-link" href="https://discord.com/users/1171276244495650911" target="_blank">
-        <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png" alt="Discord icon">
+        <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a69f118df70ad7828d4_icon_clyde_blurple_RGB.svg" alt="Discord icon">
       </a>
     </div>
-    
   </div>
   <div id="enterText">Click to enter</div>
 
