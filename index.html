@@ -3,12 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="title">S</title>
-  <meta property="og:title" content="Sebass">
-  <meta property="og:description" content="Sebass">
-  <meta property="og:image" content="https://cdn.discordapp.com/avatars/1171276244495650911/ec019b99a364b6d74e7c129feb3f483d.webp?size=1024">
-  <meta property="og:url" content="https://discord.land">
-  <meta property="og:type" content="website">
+  <title>Sebass's BioLink</title>
   <style>
     body {
       margin: 0;
@@ -23,13 +18,13 @@
     }
     #bioLink {
       position: relative;
-      width: 450px; /* Adjust width */
-      height: 400px; /* Adjust height */
+      width: 300px;
+      height: 300px;
       border-radius: 20px;
       background-color: rgba(255, 255, 255, 0.1);
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
       animation: fadeIn 1s ease-out forwards;
-      text-align: center;
+      text-align: center; /* Center text horizontally */
     }
     #enterText {
       position: absolute;
@@ -60,21 +55,12 @@
     <h1>Sebass</h1>
     <p>C# & Python</p>
     <p>Professional Retard</p>
-    
+    <!-- Add your social media links or project links here -->
   </div>
   <div id="enterText">Click to enter</div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      const title = document.getElementById("title");
-      const titleText = "Sebass";
-      let index = 0;
-
-      setInterval(function() {
-        title.textContent = titleText.substring(0, index % (titleText.length) + 1);
-        index++;
-      }, 500);
-      
       document.body.addEventListener("click", function() {
         document.getElementById("bioLink").classList.remove("hidden");
         document.getElementById("enterText").style.display = "none";
