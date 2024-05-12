@@ -15,21 +15,42 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            cursor: pointer;
         }
-        .content {
+        #enterText {
+            cursor: pointer;
+            font-size: 24px;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+        #sebassBox {
+            display: none;
+            width: 300px;
+            height: 150px;
+            background-color: #333;
+            color: white;
+            border-radius: 10px;
             text-align: center;
+            padding: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     </style>
 </head>
-<body onclick="showContent()">
-    <div class="content" id="content" style="display: none;">
+<body>
+    <div id="enterText" onclick="showContent()">Click to Enter</div>
+    <div id="sebassBox">
         <h1>Sebass</h1>
         <p>C# Coder - Professional Idiot</p>
     </div>
     <script>
         function showContent() {
-            document.getElementById('content').style.display = 'block';
+            document.getElementById('enterText').style.opacity = '0';
+            setTimeout(function() {
+                document.getElementById('enterText').style.display = 'none';
+                document.getElementById('sebassBox').style.display = 'block';
+            }, 1000);
         }
     </script>
 </body>
