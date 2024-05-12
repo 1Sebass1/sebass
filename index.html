@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sebass's BioLink</title>
+  <meta property="og:title" content="Sebass">
+  <meta property="og:description" content="I'm passionate about coding and I work with Python and C#. Despite occasional typos, I strive to learn and improve.">
+  <meta property="og:image" content="https://cdn.discordapp.com/avatars/1171276244495650911/ec019b99a364b6d74e7c129feb3f483d.webp?size=1024">
+  <meta property="og:url" content="https://example.com/sebass">
+  <meta property="og:type" content="website">
   <style>
     body {
       margin: 0;
@@ -24,7 +29,11 @@
       background-color: rgba(255, 255, 255, 0.1);
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
       animation: fadeIn 1s ease-out forwards;
-      text-align: center; /* Center text horizontally */
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
     #enterText {
       position: absolute;
@@ -45,17 +54,22 @@
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
   <div id="bioLink" class="hidden">
-    <img src="https://cdn.discordapp.com/avatars/1171276244495650911/ec019b99a364b6d74e7c129feb3f483d.webp?size=1024&format=webp&width=0&height=256" alt="Sebass's Profile Picture" class="profile-img">
-    <h1>Sebass</h1>
-    <p>C# & Python</p>
-    <p>Professional Retard</p>
-    <!-- Add your social media links or project links here -->
+    <div>
+      <img src="https://cdn.discordapp.com/avatars/1171276244495650911/ec019b99a364b6d74e7c129feb3f483d.webp?size=1024&format=webp&width=0&height=256" alt="Sebass's Profile Picture" class="profile-img">
+      <h1>Sebass</h1>
+      <p>C# & Python</p>
+      <p>Professional Retard</p>
+      <a class="social-link" href="https://discord.com/users/1171276244495650911" target="_blank">
+        <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png" alt="Discord icon">
+      </a>
+    </div>
+    
   </div>
   <div id="enterText">Click to enter</div>
 
