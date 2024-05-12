@@ -84,20 +84,17 @@
     });
 
     function animateTitle() {
-    const titleText = "Sebass"; // Text for animation
-    let reverse = false;
-    let index = 0;
-    setInterval(() => {
-        if (index === titleText.length) {
-        reverse = true;
-        } else if (index === 0) {
-        reverse = false;
-        }
-        const slicedText = reverse ? titleText.slice(0, index--) : titleText.slice(0, ++index);
-        document.title = "@" + slicedText;
-    }, 200); // Adjust the interval for animation speed
+        const targetTitle = "SEBASS";
+        
+        let currentIndex = 0;
+        let interval = setInterval(() => {
+            document.title = targetTitle.substring(0, currentIndex + 1);
+            currentIndex++;
+            if (currentIndex >= targetTitle.length) {
+                clearInterval(interval);
+            }
+        }, 200);
     }
-
   </script>
 </body>
 </html>
