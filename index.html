@@ -81,19 +81,17 @@
         document.getElementById("enterText").style.display = "none";
         animateTitle();
       });
-
-      function animateTitle() {
-        const titleElement = document.getElementById("title");
-        const titleText = "Sebass";
-        let index = 0;
-        setInterval(() => {
-          index = (index + 1) % titleText.length;
-          titleElement.textContent = titleText.substring(0, index + 1);
-        }, 500);
-      }
     });
-  </script>
 
-  
+    function animateTitle() {
+      const titleElement = document.getElementById("title");
+      const titleText = "Sebassa";
+      let index = 0;
+      setInterval(() => {
+        index = (index + 1) % titleText.length;
+        titleElement.textContent = titleText.substring(0, index + 1);
+      }, 500);
+    }
+  </script>
 </body>
 </html>
