@@ -61,8 +61,7 @@
   </style>
 </head>
 <body>
-    <audio src="https://r2.guns.lol/c78dbc2c-3e4d-4fd7-a49e-63f6b4fbbcfe.mp3" loop></audio>
-    <div id="bioLink" class="hidden">
+  <div id="bioLink" class="hidden">
     <div>
       <img src="https://cdn.discordapp.com/avatars/1171276244495650911/ec019b99a364b6d74e7c129feb3f483d.webp?size=1024&format=webp&width=0&height=256" alt="pfp" class="profilePic">
       <h1>Sebass</h1>
@@ -75,13 +74,26 @@
   </div>
   <div id="enterText">click to enter</div>
 
+  <audio id="sound" src="funnn.mp3"></audio>
+
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      document.body.addEventListener("click", function() {
-        document.getElementById("bioLink").classList.remove("hidden");
-        document.getElementById("enterText").style.display = "none";
+      const bioLink = document.getElementById("bioLink");
+      const enterText = document.getElementById("enterText");
+      const funSound = document.getElementById("funSound");
+
+      bioLink.addEventListener("click", function() {
+        bioLink.classList.remove("hidden");
+        enterText.style.display = "none";
         animateTitle();
       });
+
+         document.body.addEventListener("click", function() {
+           bioLink.classList.remove("hidden");
+           enterText.style.display = "none";
+           animateTitle();
+           sound.play();
+         });
     });
 
     function animateTitle() {
