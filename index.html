@@ -102,11 +102,11 @@
       const bioLink = document.getElementById("bioLink");
       const enterText = document.getElementById("enterText");
       const sound = document.getElementById("sound");
+      animateTitle();
 
       bioLink.addEventListener("click", function() {
         bioLink.classList.remove("hidden");
         enterText.style.display = "none";
-        animateTitle();
         sound.play();
 
         document.querySelector('.background-blur').style.opacity = '1';
@@ -115,7 +115,6 @@
       document.body.addEventListener("click", function() {
         bioLink.classList.remove("hidden");
         enterText.style.display = "none";
-        animateTitle();
         sound.play();
 
         document.querySelector('.background-blur').style.opacity = '1';
