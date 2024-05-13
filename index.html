@@ -9,12 +9,12 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background-color: #000;
       color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      background-color: black;
     }
     #bioLink {
       position: relative;
@@ -28,6 +28,11 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      z-index: 1;
+      transition: transform 0.3s ease;
+    }
+    #bioLink:hover {
+      transform: scale(1.1);
     }
     #enterText {
       position: absolute;
@@ -58,9 +63,25 @@
       height: auto;
       margin-bottom: 5px;
     }
+
+    .background-blur {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://media4.giphy.com/media/aFoQlfDJwCMlxW2Bme/giphy.gif?cid=6c09b952i73isrikw36b34jzaoc817d7qmy9jgu549277exb&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g');
+      background-size: cover;
+      filter: blur(10px);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
   </style>
 </head>
 <body>
+  <div class="background-blur"></div>
+
   <div id="bioLink" class="hidden">
     <div>
       <img src="https://cdn.discordapp.com/avatars/1171276244495650911/ec019b99a364b6d74e7c129feb3f483d.webp?size=1024&format=webp&width=0&height=256" alt="pfp" class="profilePic">
@@ -76,31 +97,33 @@
 
   <audio id="sound" src="sebAud.mp3" loop></audio>
 
-
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const bioLink = document.getElementById("bioLink");
       const enterText = document.getElementById("enterText");
-      const funSound = document.getElementById("funSound");
+      const sound = document.getElementById("sound");
 
       bioLink.addEventListener("click", function() {
         bioLink.classList.remove("hidden");
         enterText.style.display = "none";
         animateTitle();
-        
+        sound.play();
+
+        document.querySelector('.background-blur').style.opacity = '1';
       });
 
-         document.body.addEventListener("click", function() {
-           bioLink.classList.remove("hidden");
-           enterText.style.display = "none";
-           animateTitle();
-           sound.play();
-         });
+      document.body.addEventListener("click", function() {
+        bioLink.classList.remove("hidden");
+        enterText.style.display = "none";
+        animateTitle();
+        sound.play();
+
+        document.querySelector('.background-blur').style.opacity = '1';
+      });
     });
 
     function animateTitle() {
       const targetTitle = "Sebass";
-        
       let currentIndex = 0;
       let interval = setInterval(() => {
         document.title = targetTitle.substring(0, currentIndex + 1);
