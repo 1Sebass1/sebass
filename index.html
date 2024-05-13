@@ -86,14 +86,8 @@
         bioLink.classList.remove("hidden");
         enterText.style.display = "none";
         animateTitle();
+        sound.play();
       });
-
-         document.body.addEventListener("click", function() {
-           bioLink.classList.remove("hidden");
-           enterText.style.display = "none";
-           animateTitle();
-           sound.play();
-         });
     });
 
     function animateTitle() {
