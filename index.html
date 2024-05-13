@@ -124,15 +124,14 @@
     function animateTitle() {
       const targetTitle = "Sebass";
       let currentIndex = 0;
+      let increment = 1;
       let interval = setInterval(() => {
         document.title = targetTitle.substring(0, currentIndex + 1);
-        currentIndex++;
-        if (currentIndex >= targetTitle.length) {
-          clearInterval(interval);
-          currentIndex = 0;
-          animateTitle();
+        currentIndex += increment;
+        if (currentIndex >= targetTitle.length || currentIndex <= 0) {
+          increment *= -1;
         } 
-      }, 500);
+      }, 200);
     }
   </script>
 </body>
