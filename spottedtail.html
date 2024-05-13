@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>spottedtail</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #bioLink {
+      position: relative;
+      width: 450px;
+      height: 370px;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      animation: fadeIn 1s ease-out forwards;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #enterText {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+      cursor: pointer;
+    }
+    #bioLink.hidden {
+      display: none;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .profilePic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .social-link {
+      margin-top: auto;
+    }
+    .social-link img {
+      width: 30px;
+      height: auto;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="bioLink" class="hidden">
+    <div>
+      <img src="https://cdn.discordapp.com/avatars/1134142538412994752/c274ec54ed582e8514c16d7f6cb710c2.webp?size=1024&format=webp&width=0&height=256" alt="pfp" class="profilePic">
+      <h1>spottedtail</h1>
+      <p>My Name Is SpottedTail!</p>
+      <p>Obsessed With Warrior Cats.</p>
+      <a class="social-link" href="https://discord.com/users/1134142538412994752" target="_blank">
+        <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a69f118df70ad7828d4_icon_clyde_blurple_RGB.svg" alt="discordIco">
+      </a>
+    </div>
+  </div>
+  <div id="enterText">click to enter</div>
+
+  <audio id="sound" src="spottedAud.mp3"></audio>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const bioLink = document.getElementById("bioLink");
+      const enterText = document.getElementById("enterText");
+      const funSound = document.getElementById("funSound");
+
+      bioLink.addEventListener("click", function() {
+        bioLink.classList.remove("hidden");
+        enterText.style.display = "none";
+        animateTitle();
+        
+      });
+
+         document.body.addEventListener("click", function() {
+           bioLink.classList.remove("hidden");
+           enterText.style.display = "none";
+           animateTitle();
+           sound.play();
+         });
+    });
+
+    function animateTitle() {
+      const targetTitle = "spottedtail";
+        
+      let currentIndex = 0;
+      let interval = setInterval(() => {
+        document.title = targetTitle.substring(0, currentIndex + 1);
+        currentIndex++;
+        if (currentIndex >= targetTitle.length) {
+          clearInterval(interval);
+        } 
+      }, 500);
+    }
+  </script>
+</body>
+</html>
