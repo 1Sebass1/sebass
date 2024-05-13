@@ -129,6 +129,8 @@
         currentIndex++;
         if (currentIndex >= targetTitle.length) {
           clearInterval(interval);
+          currentIndex = 0;
+          animateTitle();
         } 
       }, 500);
     }
