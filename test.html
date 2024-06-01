@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. Louis City Roleplay</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #000000, #1a1a1a);
+    color: #fff;
+    text-align: center;
+    user-select: none;
+}
+
+header {
+    padding: 20px 0;
+    background: url('header-background.jpg') center/cover;
+}
+
+header h1, header p, section h2, section p, footer p {
+    margin: 0;
+}
+
+section {
+    padding: 10px 20px; /* Adjust padding to decrease the space */
+    margin: 10px auto; /* Adjust margin to decrease the space */
+    max-width: 800px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+section h2 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+section p {
+    margin: 10px 0;
+    background: #222;
+    padding: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+section p:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background: linear-gradient(135deg, #111111, #333333);
+    color: #ddd;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.policeText span {
+    text-transform: uppercase;
+    color: white;
+    font-weight: 100;
+    letter-spacing: 3px;
+    font-size: 50px;    
+}
+
+.policeText span:first-child {
+    animation: red 0.5s linear infinite;
+    animation-delay: 0.25s;
+}
+
+.policeText span:last-child {
+    animation: blue 0.5s linear infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes red {
+    from {
+        text-shadow: 0 0 5px red,
+                     0 0 15px red,
+                     0 0 30px red,
+                     0 0 60px red;
+    }
+}
+
+@keyframes blue {
+    from {
+        text-shadow: 0 0 5px blue,
+                     0 0 15px blue,
+                     0 0 30px blue,
+                     0 0 60px blue;
+    }
+}
+    </style>
+</head>
+<body>
+
+  <div class="policeText">
+      <span>St. Louis <br></span>
+      <span>Roleplay Community</span>
+  </div>
+
+
+
+    <section id="what-we-offer">
+        <h2>What We Offer</h2>
+        <p>👋 Friendly Community</p>
+        <p>👮 Custom Uniforms</p>
+        <p>🚓 Custom Liveries</p>
+        <p>📛 Departments</p>
+    </section>
+
+    <section id="departments">
+        <h2>Departments</h2>
+        <p>🚓 Saint Louis County Police</p>
+        <p>🚨 St. Louis Metro Police</p>
+        <p>🚒 St. Louis Regional Fire & Emergency</p>
+        <p>👷 Missouri DOT</p>
+    </section>
+
+    <section id="looking-for">
+        <h2>What We Are Looking For</h2>
+        <p>👍 Experienced Staff (Hiring)</p>
+        <p>👨‍🎓 Good Roleplayers</p>
+        <p>🔑 Different Types of RPs</p>
+    </section>
+
+    <section id="join-us">
+        <h2>Join Us Today!</h2>
+        <p>☆ <a href="https://discord.gg/stlrp">Discord Server</a></p>
+    </section>
+
+    <footer>
+        <p>St. Louis City Roleplay &copy; 2024</p>
+    </footer>
+</body>
+</html>
