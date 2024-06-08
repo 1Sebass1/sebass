@@ -99,11 +99,13 @@
   <audio id="sound" src="sebAud.mp3" loop></audio>
 
   <script>
+
     document.addEventListener("DOMContentLoaded", function() {
       const bioLink = document.getElementById("bioLink");
       const enterText = document.getElementById("enterText");
       const sound = document.getElementById("sound");
       animateTitle();
+      alert("Evil smells like poop")
 
       bioLink.addEventListener("click", function() {
         bioLink.classList.remove("hidden");
