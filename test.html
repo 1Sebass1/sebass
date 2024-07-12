@@ -141,25 +141,41 @@
                              0 0 60px blue;
             }
         }
+
+        #marquee {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 24px;
+            color: #fff;
+            z-index: 1000;
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             let keys = [];
             const secretCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown'];
+            let activated = false;
             
             window.addEventListener('keydown', (e) => {
                 keys.push(e.key);
                 if (keys.length > secretCode.length) {
                     keys.shift();
                 }
-                if (keys.join('') === secretCode.join('')) {
+                if (keys.join('') === secretCode.join('') && !activated) {
+                    activated = true;
                     displayMarquee();
                 }
             });
             
             function displayMarquee() {
-                const marquee = document.createElement('marquee');
-                marquee.textContent = 'littletrob13 can go suck my dick';
+                const marquee = document.createElement('div');
+                marquee.id = 'marquee';
+                marquee.textContent = 'hello';
                 document.body.appendChild(marquee);
             }
         });
