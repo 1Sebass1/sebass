@@ -50,37 +50,36 @@
         }
         
         #meet-the-staff {
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
 
-#meet-the-staff h2 {
-    color: #1e90ff;
-    margin-bottom: 20px;
-    font-size: 24px;
-}
+        #meet-the-staff h2 {
+            color: #1e90ff;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
 
-.staff-member {
-    margin-bottom: 20px;
-    text-align: center;
-}
+        .staff-member {
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
-.staff-member img {
-    width: 100px; /* Adjust size as needed */
-    height: 100px; /* Adjust size as needed */
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
+        .staff-member img {
+            width: 100px; /* Adjust size as needed */
+            height: 100px; /* Adjust size as needed */
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
 
-.staff-member p {
-    margin: 0;
-    font-weight: bold;
-}
-
+        .staff-member p {
+            margin: 0;
+            font-weight: bold;
+        }
 
         section p:hover {
             transform: scale(1.05);
@@ -143,13 +142,34 @@
             }
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let keys = [];
+            const secretCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown'];
+            
+            window.addEventListener('keydown', (e) => {
+                keys.push(e.key);
+                if (keys.length > secretCode.length) {
+                    keys.shift();
+                }
+                if (keys.join('') === secretCode.join('')) {
+                    displayMarquee();
+                }
+            });
+            
+            function displayMarquee() {
+                const marquee = document.createElement('marquee');
+                marquee.textContent = 'littletrob13 can go suck my dick';
+                document.body.appendChild(marquee);
+            }
+        });
+    </script>
 </head>
 <body>
-
-  <div class="policeText">
-      <span>Los Angeles<br></span>
-      <span>Roleplay Community</span>
-  </div>
+    <div class="policeText">
+        <span>Los Angeles<br></span>
+        <span>Roleplay Community</span>
+    </div>
 
     <section id="what-we-offer">
         <h2>What We Offer</h2>
@@ -161,7 +181,6 @@
         <p>🚨 Good Roleplay</p>
         <p>🎉 In-game Events</p>
     </section>
-
 
     <section id="departments">
         <h2>Departments</h2>
@@ -186,24 +205,23 @@
     </section>
     
     <section id="meet-the-staff">
-    <h2>Meet the Staff</h2>
-    <div class="staff-member">
-        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B76833CF2BD8DF878ADB75E89DAB78D9-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="SEB">
-        <p>SEB - Founder</p>
-    </div>
-    <div class="staff-member">
-        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-3DE269F120D5592DBF9BBFF3E90B4487-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Deniz">
-        <p>Deniz - Co Founder</p>
-    </div>
-    <div class="staff-member">
-        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-C93E0A33252CB41BD28F0424D092ECB3-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Ralph">
-        <p>Ralph - Co Founder</p>
-    </div>
-</section>
-
+        <h2>Meet the Staff</h2>
+        <div class="staff-member">
+            <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B76833CF2BD8DF878ADB75E89DAB78D9-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="SEB">
+            <p>SEB - Founder</p>
+        </div>
+        <div class="staff-member">
+            <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-3DE269F120D5592DBF9BBFF3E90B4487-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Deniz">
+            <p>Deniz - Co Founder</p>
+        </div>
+        <div class="staff-member">
+            <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-C93E0A33252CB41BD28F0424D092ECB3-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Ralph">
+            <p>Ralph - Co Founder</p>
+        </div>
+    </section>
 
     <footer>
-        <p>St. Louis City Roleplay &copy; 2024</p>
+        <p>Sebass</p>
     </footer>
 </body>
 </html>
