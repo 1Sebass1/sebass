@@ -1,0 +1,175 @@
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+]=]
+
+-- Instances: 9 | Scripts: 2 | Modules: 0 | Tags: 0
+local G2L = {};
+
+-- StarterGui.Main
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["Name"] = [[Main]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+
+-- StarterGui.Main.MainFrame
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(55, 55, 55);
+G2L["2"]["Size"] = UDim2.new(0, 684, 0, 384);
+G2L["2"]["Position"] = UDim2.new(0.28667, 0, 0.23761, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Name"] = [[MainFrame]];
+
+
+-- StarterGui.Main.MainFrame.TextLabel
+G2L["3"] = Instance.new("TextLabel", G2L["2"]);
+G2L["3"]["TextWrapped"] = true;
+G2L["3"]["BorderSizePixel"] = 0;
+G2L["3"]["TextScaled"] = true;
+G2L["3"]["BackgroundColor3"] = Color3.fromRGB(55, 55, 55);
+G2L["3"]["TextSize"] = 14;
+G2L["3"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["3"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3"]["Size"] = UDim2.new(0, 684, 0, 65);
+G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3"]["Text"] = [[Islands Lookup (Made by Sebass)]];
+
+
+-- StarterGui.Main.MainFrame.TextLabel.UICorner
+G2L["4"] = Instance.new("UICorner", G2L["3"]);
+
+
+
+-- StarterGui.Main.MainFrame.UICorner
+G2L["5"] = Instance.new("UICorner", G2L["2"]);
+
+
+
+-- StarterGui.Main.MainFrame.UsernameInput
+G2L["6"] = Instance.new("TextBox", G2L["2"]);
+G2L["6"]["CursorPosition"] = -1;
+G2L["6"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["BorderSizePixel"] = 0;
+G2L["6"]["TextWrapped"] = true;
+G2L["6"]["TextSize"] = 14;
+G2L["6"]["Name"] = [[UsernameInput]];
+G2L["6"]["TextScaled"] = true;
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(55, 55, 55);
+G2L["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6"]["PlaceholderText"] = [[Username]];
+G2L["6"]["Size"] = UDim2.new(0, 684, 0, 50);
+G2L["6"]["Position"] = UDim2.new(0, 0, 0.35417, 0);
+G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["Text"] = [[]];
+
+
+-- StarterGui.Main.MainFrame.TextButton
+G2L["7"] = Instance.new("TextButton", G2L["2"]);
+G2L["7"]["TextWrapped"] = true;
+G2L["7"]["BorderSizePixel"] = 0;
+G2L["7"]["TextSize"] = 14;
+G2L["7"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7"]["TextScaled"] = true;
+G2L["7"]["BackgroundColor3"] = Color3.fromRGB(39, 39, 39);
+G2L["7"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["7"]["Size"] = UDim2.new(0, 200, 0, 50);
+G2L["7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7"]["Text"] = [[Lookup]];
+G2L["7"]["Position"] = UDim2.new(0.3538, 0, 0.76042, 0);
+
+
+-- StarterGui.Main.MainFrame.TextButton.LocalScript
+G2L["8"] = Instance.new("LocalScript", G2L["7"]);
+
+
+
+-- StarterGui.Main.MainFrame.LocalScript
+G2L["9"] = Instance.new("LocalScript", G2L["2"]);
+
+
+
+-- StarterGui.Main.MainFrame.TextButton.LocalScript
+local function C_8()
+local script = G2L["8"];
+	local username = script.Parent.Parent.UsernameInput
+	local player = game.Players:WaitForChild(username)
+	local backpack = player.Backpack
+	
+	-- Function to get all tools in the backpack
+	local function getToolsInBackpack()
+		local tools = {}
+		for _, item in ipairs(backpack:GetChildren()) do
+			if item:IsA("Tool") then
+				-- Find Amount (IntValue) and DisplayName (StringValue) inside the tool
+				local amount = item:FindFirstChild("Amount")
+				local displayName = item:FindFirstChild("DisplayName")
+	
+				-- If both Amount and DisplayName are present, add the tool details
+				if amount and displayName and amount:IsA("IntValue") and displayName:IsA("StringValue") then
+					table.insert(tools, {
+						Name = item.Name,  -- Tool name
+						Amount = amount.Value,  -- Amount value
+						DisplayName = displayName.Value  -- DisplayName value
+					})
+				end
+			end
+		end
+		return tools
+	end
+	
+	-- Function to upload data using syn.request
+	local function uploadData(tools)
+		local url = "http://142.93.53.101:3000/upload"  -- Your local server URL
+	
+		local data = {
+			playerName = player.Name,  -- Include player name
+			tools = tools
+		}
+	
+		local jsonData = game:GetService("HttpService"):JSONEncode(data)
+	
+		print("Tools to upload:", jsonData)  -- Debugging output
+	
+		-- Use syn.request to send the data
+		local response = syn.request({
+			Url = url,
+			Method = "POST",
+			Headers = {
+				["Content-Type"] = "application/json"
+			},
+			Body = jsonData
+		})
+	
+		print("Response:", response)  -- Debugging output
+	
+		if response.StatusCode == 200 then
+			print("Data uploaded successfully!")
+		else
+			print("Failed to upload data:", response.StatusCode, response.Body)
+		end
+	end
+	
+	-- Main execution
+	script.Parent.MouseButton1Click:Connect(function()
+		local toolsInBackpack = getToolsInBackpack()
+		uploadData(toolsInBackpack)
+	end)
+	
+end;
+task.spawn(C_8);
+-- StarterGui.Main.MainFrame.LocalScript
+local function C_9()
+local script = G2L["9"];
+	frame = script.Parent
+	frame.Draggable = true
+	frame.Active = true
+	frame.Selectable = true
+end;
+task.spawn(C_9);
+
+return G2L["1"], require;
